@@ -1,0 +1,40 @@
+{
+  "name": "top-cs-exercises",
+  "version": "1.0.0",
+  "description": "Exercises for the Computer Science section of The Odin Project",
+  "keywords": [
+    "CS",
+    "recursion",
+    "merge-sort",
+    "merge",
+    "sort",
+    "binary-search-tree",
+    "BST",
+    "fibonacci",
+    "hash-map",
+    "hash",
+    "linked-list"
+  ],
+  "homepage": "https://github.com/mostafa-imam/TOP-CS-Exercises#readme",
+  "bugs": {
+    "url": "https://github.com/mostafa-imam/TOP-CS-Exercises/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostafa-imam/TOP-CS-Exercises.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "prelint": "prettier --write",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.1",
+    "globals": "^17.3.0",
+    "prettier": "3.8.1"
+  }
+}
