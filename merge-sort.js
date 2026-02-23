@@ -44,11 +44,3 @@ function merge(leftArr, rightArr) {
 
     return returnedArr;
 }
-
-// let test = [3, 2, 1, 13, 8, 5, 0, 1];
-
-console.log('Input: []', `output: [${mergeSort([])}]`);
-console.log('Input: [73]', `output: [${mergeSort([73])}]`);
-console.log('Input: [1, 2, 3, 4, 5]', `output: [${mergeSort([1, 2, 3, 4, 5])}]`);
-console.log('Input: [3, 2, 1, 13, 8, 5, 0, 1]', `output: [${mergeSort([3, 2, 1, 13, 8, 5, 0, 1])}]`);
-console.log('Input: [105, 79, 100, 110]', `output: [${mergeSort([105, 79, 100, 110])}]`);
