@@ -28,7 +28,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "prelint": "prettier --write",
+    "pretty": "prettier --write",
     "lint": "eslint"
   },
   "devDependencies": {
