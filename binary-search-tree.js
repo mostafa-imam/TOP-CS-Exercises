@@ -169,6 +169,33 @@ class Tree {
 
     traverse(this.root);
   }
+
+  height(value) {
+    let current = this.root;
+
+    while (current !== null) {
+      if (value === current.data) break;
+
+      if (value < current.data) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+
+    if (current === null) return undefined;
+
+    const getHeight = (node) => {
+      if (node === null) return -1;
+
+      const leftHeight = getHeight(node.left);
+      const rightHeight = getHeight(node.right);
+
+      return Math.max(leftHeight, rightHeight) + 1;
+    };
+
+    return getHeight(current);
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -184,10 +211,10 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 const tree = new Tree([1, 2, 3, 4, 5, 6, 7]);
 prettyPrint(tree.root);
 
-const result = [];
+// const result = [];
 // tree.inOrderForEach(v => result.push(v));
 // console.log(result);
-tree.preOrderForEach((v) => result.push(v));
-console.log(result);
+// tree.preOrderForEach((v) => result.push(v));
+console.log(tree.height(789));
 // tree.postOrderForEach(v => result.push(v));
 // console.log(result);
