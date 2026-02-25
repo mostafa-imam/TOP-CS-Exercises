@@ -237,25 +237,32 @@ class Tree {
 
         return check(this.root) !== -1;
     }
+
+    rebalance() {
+        const values = [];
+
+        this.inOrderForEach(value => values.push(value));
+
+        this.root = this.#buildTree(values);
+    }
 }
 
-const prettyPrint = (node, prefix = "", isLeft = true) => {
-    if (node === null || node === undefined) {
-        return;
-    }
+// const prettyPrint = (node, prefix = "", isLeft = true) => {
+//     if (node === null || node === undefined) {
+//         return;
+//     }
 
-    prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
-    console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
-    prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
-};
+//     prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
+//     console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
+//     prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
+// };
 
 const tree = new Tree([1, 2, 3, 4, 5, 6, 7]);
-prettyPrint(tree.root);
-
-// const result = [];
-// tree.inOrderForEach(v => result.push(v));
-// console.log(result);
-// tree.preOrderForEach((v) => result.push(v));
 console.log(tree.isBalanced());
-// tree.postOrderForEach(v => result.push(v));
-// console.log(result);
+tree.insert(100);
+tree.insert(200);
+tree.insert(300);
+
+console.log(tree.isBalanced());
+tree.rebalance();
+console.log(tree.isBalanced());
