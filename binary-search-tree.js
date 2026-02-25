@@ -215,7 +215,27 @@ class Tree {
             depth++;
         }
 
-        return undefined; // value not found
+        return undefined;
+    }
+
+    isBalanced() {
+        const check = (node) => {
+            if (node === null) return 0;
+
+            const leftHeight = check(node.left);
+            if (leftHeight === -1) return -1;
+
+            const rightHeight = check(node.right);
+            if (rightHeight === -1) return -1;
+
+            if (Math.abs(leftHeight - rightHeight) > 1) {
+                return -1;
+            }
+
+            return Math.max(leftHeight, rightHeight) + 1;
+        };
+
+        return check(this.root) !== -1;
     }
 }
 
@@ -236,6 +256,6 @@ prettyPrint(tree.root);
 // tree.inOrderForEach(v => result.push(v));
 // console.log(result);
 // tree.preOrderForEach((v) => result.push(v));
-console.log(tree.depth(3));
+console.log(tree.isBalanced());
 // tree.postOrderForEach(v => result.push(v));
 // console.log(result);
